@@ -1,12 +1,34 @@
 function getComputerChoice() {
-    let max = 3;
-    let choice = Math.floor(Math.random() * max);
-    if (choice == 0) {
-        return console.log("rock");
-    } else if (choice == 1) {
-        return console.log("paper");
+  let max = 3;
+  let choiceStr = "";
+  let choiceNum = Math.floor(Math.random() * max);
+
+  if (choiceNum == 0) {
+    choiceStr = "rock";
+  } else if (choiceNum == 1) {
+    choiceStr = "paper";
+  } else {
+    choiceStr = "scissors";
+  }
+
+  return choiceStr;
+}
+
+function getHumanChoice() {
+  const promptButton = document.querySelector("#promptButton");
+
+  promptButton.addEventListener("click", () => {
+    let prmpt = prompt("rock, paper or scissors?");
+    if (prmpt === null) {
+      log.innerText = "OK, maybe next time.";
+    } else if (prmpt.toLowerCase() === "") {
+      log.innerText = "Try entering your choice again.";
+    } else if (prmpt.toLowerCase() === "rock") {
+      log.innerText = "You've chosen rock.";
+    } else if (prmpt.toLowerCase() === "paper") {
+      log.innerText = "You've chosen paper.";
+    } else if (prmpt.toLowerCase() === "scissors") {
+      log.innerText = "You've chosen scissors.";
     }
-    else {
-        return console.log("scissors");
-    }
+  });
 }
