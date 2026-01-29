@@ -16,9 +16,11 @@ function getComputerChoice() {
 
 function getHumanChoice() {
   const promptButton = document.querySelector("#promptButton");
+  const log = document.querySelector("#log");
 
   promptButton.addEventListener("click", () => {
     let prmpt = prompt("rock, paper or scissors?");
+    
     if (prmpt === null) {
       log.innerText = "OK, maybe next time.";
     } else if (prmpt.toLowerCase() === "") {
