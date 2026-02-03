@@ -20,17 +20,17 @@ const log = document.querySelector("#log");
 promptButton.addEventListener("click", getHumanChoice);
 
 function getHumanChoice() {
-  let prmpt = prompt("rock, paper or scissors?");
+  let choicePrompt = prompt("rock, paper or scissors?");
 
-  if (prmpt === null) {
+  if (choicePrompt === null) {
     log.innerText = "OK, maybe next time.";
-  } else if (prmpt.toLowerCase() === "") {
+  } else if (choicePrompt.toLowerCase() === "") {
     log.innerText = "Try entering your choice again.";
-  } else if (prmpt.toLowerCase() === "rock") {
+  } else if (choicePrompt.toLowerCase() === "rock") {
     log.innerText = "You've chosen rock.";
-  } else if (prmpt.toLowerCase() === "paper") {
+  } else if (choicePrompt.toLowerCase() === "paper") {
     log.innerText = "You've chosen paper.";
-  } else if (prmpt.toLowerCase() === "scissors") {
+  } else if (choicePrompt.toLowerCase() === "scissors") {
     log.innerText = "You've chosen scissors.";
   }
 }
