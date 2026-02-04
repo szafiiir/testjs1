@@ -1,17 +1,17 @@
 function getComputerChoice() {
   let max = 3;
-  let choiceStr = "";
+  let computerChoice = "";
   let choiceNum = Math.floor(Math.random() * max);
 
   if (choiceNum == 0) {
-    choiceStr = "rock";
+    computerChoice = "rock";
   } else if (choiceNum == 1) {
-    choiceStr = "paper";
+    computerChoice = "paper";
   } else {
-    choiceStr = "scissors";
+    computerChoice = "scissors";
   }
 
-  return choiceStr;
+  return computerChoice;
 }
 
 const promptButton = document.querySelector("#promptButton");
@@ -20,17 +20,25 @@ const log = document.querySelector("#log");
 promptButton.addEventListener("click", getHumanChoice);
 
 function getHumanChoice() {
-  let choicePrompt = prompt("rock, paper or scissors?");
+  let promptChoice = prompt("rock, paper or scissors?");
 
-  if (choicePrompt === null) {
+  if (promptChoice === null) {
     log.innerText = "OK, maybe next time.";
-  } else if (choicePrompt.toLowerCase() === "") {
+  } else if (promptChoice.toLowerCase() === "") {
     log.innerText = "Try entering your choice again.";
-  } else if (choicePrompt.toLowerCase() === "rock") {
+  } else if (promptChoice.toLowerCase() === "rock") {
     log.innerText = "You've chosen rock.";
-  } else if (choicePrompt.toLowerCase() === "paper") {
+    return promptChoice.toLowerCase();
+  } else if (promptChoice.toLowerCase() === "paper") {
     log.innerText = "You've chosen paper.";
-  } else if (choicePrompt.toLowerCase() === "scissors") {
+    return promptChoice.toLowerCase();
+  } else if (promptChoice.toLowerCase() === "scissors") {
     log.innerText = "You've chosen scissors.";
+    return promptChoice.toLowerCase();
   }
 }
+
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(human, computer) {}
