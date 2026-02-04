@@ -41,4 +41,20 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
-function playRound(human, computer) {}
+function playRound(human, computer) {
+  if (human === computer) {
+    console.log("draw!");
+  } else if (human === "rock" && computer === "scissors") {
+    console.log("Human wins the round.");
+    return (humanScore += 1);
+  } else if (human === "paper" && computer === "rock") {
+    console.log("Human wins the round.");
+    return (humanScore += 1);
+  } else if (human === "scissors" && computer === "paper") {
+    console.log("Human wins the round.");
+    return (humanScore += 1);
+  } else {
+    console.log("Computer wins the round.");
+    computerScore += 1;
+  }
+}
